@@ -76,14 +76,14 @@ modules:
           - name: bz-1769831
           ### Image :: standalone ####
           - name: sso-jdk
-            version: '11'
+            version: &jdk_version '11'
           - name: eap-73-latest
           - name: sso
             version: '1.0'
           - name: keycloak.openshift.clients
             version: '1.0'
           - name: sso-rm-openjdk
-            version: '1.0'
+            version: *jdk_version
 
           ### Image :: OpenShift ####
           # Order of the modules installation below matters!!! DO NOT CHANGE it unless
