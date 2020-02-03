@@ -95,8 +95,6 @@ modules:
             version: '1.0'
           - name: keycloak.openshift.clients
             version: '1.0'
-          - name: sso-rm-openjdk
-            version: *jdk_version
 
           ### Image :: OpenShift ####
           # Order of the modules installation below matters!!! DO NOT CHANGE it unless
@@ -136,6 +134,9 @@ modules:
           - name: openshift-passwd
           - name: keycloak-layer
           - name: jboss.container.util.logging.bash
+
+          - name: sso-rm-openjdk
+            version: *jdk_version
 packages:
       manager: microdnf
       content_sets:
