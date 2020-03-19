@@ -8,4 +8,9 @@ execute:
 packages:
       install:
           - postgresql-jdbc
-          - mariadb-java-client
+
+artifacts:
+#  - url: $MVN_REPO/org/mariadb/jdbc/mariadb-java-client/2.5.4.redhat-00002/mariadb-java-client-2.5.4.redhat-00002.jar
+  - url: http://indy.psi.redhat.com/api/group/static/org/mariadb/jdbc/mariadb-java-client/2.5.4.redhat-00002/mariadb-java-client-2.5.4.redhat-00002.jar
+    name: mariadb-java-client.jar
+    target: mariadb-java-client.jar

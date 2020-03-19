@@ -2,6 +2,7 @@
 # Link DB drivers, provided by RPM packages, into the "openshift" layer
 set -e
 
+SOURCES_DIR=/tmp/artifacts
 SCRIPT_DIR=$(dirname $0)
 ADDED_DIR=${SCRIPT_DIR}/added
 
@@ -10,7 +11,8 @@ function link {
   ln -s $1 $2
 }
 
-link /usr/lib/java/mariadb-java-client.jar $JBOSS_HOME/modules/system/layers/openshift/org/mariadb/main/mariadb-java-client.jar
+mkdir -p $JBOSS_HOME/modules/system/layers/openshift/org/mariadb/main/
+cp "$SOURCES_DIR/mariadb-java-client.jar" $JBOSS_HOME/modules/system/layers/openshift/org/mariadb/main/mariadb-java-client.jar
 link /usr/share/java/postgresql-jdbc.jar $JBOSS_HOME/modules/system/layers/openshift/org/postgresql/main/postgresql-jdbc.jar
 
 # module definitions for MariaDB and PostgreSQL

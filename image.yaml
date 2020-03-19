@@ -113,8 +113,8 @@ modules:
           - name: openshift-passwd
           - name: keycloak-layer
 
-          # Workarounds for known bugs in RPMs to slim down the image
-          - name: bz-1797057
+          ## Workarounds for known bugs in RPMs to slim down the image
+          #- name: bz-1797057
           - name: sso-rm-openjdk
             version: *jdk_version
 packages:
